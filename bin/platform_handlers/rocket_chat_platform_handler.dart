@@ -37,7 +37,10 @@ class RocketChatPlatformHandler {
 
   Future<List<String>> _getAllowedUsers(chatUsers) async {
     final List<String> ids = [];
-    for (final user in chatUsers) {
+    for (final Map<String, dynamic> user in chatUsers) {
+      if (!user.containsKey('username')) {
+        continue;
+      }
       if (user['roles'].contains('admin')) {
         ids.add(user['_id']);
         continue;
