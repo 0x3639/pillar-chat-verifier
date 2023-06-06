@@ -37,6 +37,7 @@ class RocketChatPlatformHandler {
 
   Future<List<String>> _getAllowedUsers(chatUsers) async {
     final List<String> ids = [];
+    final List<String> usedPubKeys = [];
     for (final Map<String, dynamic> user in chatUsers) {
       if (!user.containsKey('username')) {
         continue;
@@ -49,10 +50,12 @@ class RocketChatPlatformHandler {
           (await RocketChatService().getUserCustomFields(user['_id']));
       if (fields.length == 0) continue;
       if (!(await _isPillarPublicKey(fields['Pillar public key']!))) continue;
+      if (usedPubKeys.contains(fields['Pillar public key']!)) continue;
       final isValid = await Utils.verifySignature(fields['Message to sign']!,
           fields['Pillar public key']!, fields['Pillar signature']!);
       if (isValid) {
         ids.add(user['_id']);
+        usedPubKeys.add(fields['Pillar public key']!);
       }
     }
     _log.info('Allowed users: ${ids.length}');
