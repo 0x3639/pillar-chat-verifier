@@ -28,7 +28,7 @@ class RocketChatService {
       return true;
     } else {
       _log.severe(
-          'Failed to authenticate with Rocket Chat: ${response.statusCode}.');
+          'Failed to authenticate with Rocket Chat: ${response.statusCode}');
       return false;
     }
   }
@@ -41,7 +41,7 @@ class RocketChatService {
       return jsonDecode(response.body)['users'] as List;
     } else {
       _log.severe(
-          'getUserList(): Request failed with status: ${response.statusCode}.');
+          'getUserList(): Request failed with status: ${response.statusCode}');
       return [];
     }
   }
@@ -57,7 +57,7 @@ class RocketChatService {
           : {};
     } else {
       _log.severe(
-          'getUserCustomFields(): Request failed with status: ${response.statusCode}.');
+          'getUserCustomFields(): Request failed with status: ${response.statusCode}');
       return {};
     }
   }
@@ -72,7 +72,7 @@ class RocketChatService {
       return json['group'] != null ? json['group']['_id'] : '';
     } else {
       _log.severe(
-          'getGroupId(): Request failed with status: ${response.statusCode}.');
+          'getGroupId(): Request failed with status: ${response.statusCode}');
       return '';
     }
   }
@@ -86,7 +86,7 @@ class RocketChatService {
       return jsonDecode(response.body)['members'] as List;
     } else {
       _log.severe(
-          'getGroupUsers(): Request failed with status: ${response.statusCode}.');
+          'getGroupUsers(): Request failed with status: ${response.statusCode}');
       return [];
     }
   }
@@ -100,7 +100,7 @@ class RocketChatService {
       _log.info('User kicked from group: ${userId}.');
     } else {
       _log.info(
-          'kickUserFromGroup(): Request failed with status: ${response.statusCode}.');
+          'kickUserFromGroup(): Request failed with status: ${response.statusCode}');
     }
   }
 
@@ -113,7 +113,7 @@ class RocketChatService {
       _log.info('User added to group: ${userId}.');
     } else {
       _log.info(
-          'addUserToGroup(): Request failed with status: ${response.statusCode}.');
+          'addUserToGroup(): Request failed with status: ${response.statusCode}');
     }
   }
 }
