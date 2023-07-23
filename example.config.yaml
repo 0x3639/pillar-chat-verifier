@@ -1,5 +1,5 @@
-node_url_ws: "{$NODE}"                            # Websocket URL for a Zenon node
-rocket_chat_url: "{$URL$"                         # The Rocket Chat server URL
-rocket_chat_username: "{$USERNAME}"               # Rocket Chat username for the service to use
-rocket_chat_password: "{$PASSWORD}"               # Rocket Chat password for the service to use
-rocket_chat_private_channel_name: "{$CHANNEL}"    # The Rocket Chat channel's name used as the private chat
+node_url_ws: "${NODE}"                            # Websocket URL for a Zenon node
+rocket_chat_url: "${URL$"                         # The Rocket Chat server URL
+rocket_chat_username: "${USERNAME}"               # Rocket Chat username for the service to use
+rocket_chat_password: "${PASSWORD}"               # Rocket Chat password for the service to use
+rocket_chat_private_channel_name: "${CHANNEL}"    # The Rocket Chat channel's name used as the private chat
