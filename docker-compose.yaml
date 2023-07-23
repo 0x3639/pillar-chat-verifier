@@ -6,8 +6,8 @@ services:
     container_name: pillar-verifier
     restart: unless-stopped
     environment:
-      - NODE
-      - URL
-      - USERNAME
-      - PASSWORD
-      - CHANNEL
+      - NODE=${NODE}
+      - URL=${URL}
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+      - CHANNEL=${CHANNEL}
