@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  pillar-verifier:
+    build: .
+    container_name: pillar-verifier
+    restart: unless-stopped
